@@ -1,13 +1,12 @@
 # My Portfolio
 
-This repository contains the code for my personal portfolio website.
+This repository contains the code for my personal portfolio website built with React.js.
 
-## Description
+It showcases my projects and experiences in [Media Technology and Engineering](https://liu.se/en/education/program/6cmen) as a 4th-year MSc student.
 
-This portfolio is a WIP to showcase my projects, skills, and experiences in [Media Technology and Engineering]([YourProgramLink](https://liu.se/en/education/program/6cmen)) as a 4th-year Master of Science student.
-
-## Contact Information
+### My Socials
 
 - **Email**: rasmus.svala@hotmail.com
 - **LinkedIn**: https://www.linkedin.com/in/rasmus-svala/
 - **Portfolio Website**: https://rasmussvala.vercel.app/
+- **LeetCode**: https://leetcode.com/u/rasmussvala/
