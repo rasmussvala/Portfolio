@@ -1,15 +1,9 @@
 import React from "react";
-import profileImage from "./assets/profile-pic1.jpg";
 
 export default function Header() {
   return (
     <>
       <header className="header">
-        <div className="image-container">
-          <div className="profile-image">
-            <img src={profileImage} alt="Din bild" />
-          </div>
-        </div>
         <div className="text-container">
           <h1>Rasmus Svala</h1>
           <p>
