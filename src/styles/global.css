@@ -132,6 +132,10 @@ body {
   white-space: nowrap;
 }
 
+.github-project.link {
+  color: #121212;
+}
+
 .social-links a {
   text-decoration: none;
   background: var(--text-color);
