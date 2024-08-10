@@ -6,6 +6,7 @@ export default function sketch(p) {
   let originalPositions = [];
   let letterSpacing = 0;
   let customFont;
+  let textSize = 120; // Default text size
 
   p.preload = () => {
     customFont = p.loadFont("/Anton-Regular.ttf");
@@ -13,36 +14,14 @@ export default function sketch(p) {
 
   p.setup = () => {
     p.createCanvas(p.windowWidth, 400);
-    p.textSize(120);
+
+    // Initial text size setting
+    adjustTextSize();
+
     p.textFont(customFont);
 
     let message = "Rasmus Svala";
-
-    // Calculate total width of the message
-    let totalWidth = 0;
-    for (let i = 0; i < message.length; i++) {
-      totalWidth += p.textWidth(message.charAt(i)) + letterSpacing;
-    }
-    totalWidth -= letterSpacing; // Remove extra spacing after last letter
-
-    // Calculate starting x-position to center the message
-    let startX = (p.width - totalWidth) / 2;
-    let endX = (p.width + totalWidth) / 2;
-    let x = startX;
-
-    for (let i = 0; i < message.length; i++) {
-      let letter = message.charAt(i);
-      let w = p.textWidth(letter);
-
-      letters.push(new MovableLetter(letter, x, p.height / 2));
-      originalPositions.push(p.createVector(x, p.height / 2));
-
-      x += w + letterSpacing;
-    }
-
-    // Adjust asterisk positions
-    asterisks.push(new SpinningAsterisk(startX - 40, 210));
-    asterisks.push(new SpinningAsterisk(endX + 40, 100));
+    createLettersAndAsterisks(message);
   };
 
   p.draw = () => {
@@ -61,8 +40,49 @@ export default function sketch(p) {
 
   p.windowResized = () => {
     p.resizeCanvas(p.windowWidth, 400);
-    // Optionally re-calculate positions if needed
+    adjustTextSize(); // Adjust text size based on new window width
+    createLettersAndAsterisks("Rasmus Svala"); // Recreate letters and asterisks
   };
+
+  // Function to adjust text size based on window width
+  function adjustTextSize() {
+    if (p.windowWidth < 900) {
+      textSize = 60;
+    } else {
+      textSize = 120;
+    }
+    p.textSize(textSize);
+  }
+
+  // Function to create and position letters and asterisks
+  function createLettersAndAsterisks(message) {
+    letters = [];
+    asterisks = [];
+    originalPositions = [];
+
+    let totalWidth = 0;
+    for (let i = 0; i < message.length; i++) {
+      totalWidth += p.textWidth(message.charAt(i)) + letterSpacing;
+    }
+    totalWidth -= letterSpacing; // Remove extra spacing after last letter
+
+    let startX = (p.width - totalWidth) / 2;
+    let endX = (p.width + totalWidth) / 2;
+    let x = startX;
+
+    for (let i = 0; i < message.length; i++) {
+      let letter = message.charAt(i);
+      let w = p.textWidth(letter);
+
+      letters.push(new MovableLetter(letter, x, p.height / 2));
+      originalPositions.push(p.createVector(x, p.height / 2));
+
+      x += w + letterSpacing;
+    }
+
+    asterisks.push(new SpinningAsterisk(startX - 40, 210));
+    asterisks.push(new SpinningAsterisk(endX + 40, 100));
+  }
 
   class SpinningAsterisk {
     constructor(x, y) {
@@ -72,10 +92,8 @@ export default function sketch(p) {
     }
 
     update() {
-      // Update rotation
-      this.angle += 0.02; // Rotation speed
+      this.angle += 0.02;
 
-      // Update position based on mouse proximity
       let mousePos = p.createVector(p.mouseX, p.mouseY);
       let dir = p5.Vector.sub(this.position, mousePos);
       let d = dir.mag();
@@ -86,7 +104,6 @@ export default function sketch(p) {
         dir.mult(force);
         this.position.add(dir);
       } else {
-        // Return to original position
         this.position.x = p.lerp(this.position.x, this.originalPosition.x, 0.1);
         this.position.y = p.lerp(this.position.y, this.originalPosition.y, 0.1);
       }
@@ -96,10 +113,10 @@ export default function sketch(p) {
       p.push();
       p.translate(this.position.x, this.position.y);
       p.rotate(this.angle);
-      p.fill("#000000"); // Color of the asterisk
+      p.fill("#000000");
       p.textSize(50);
       p.textAlign(p.CENTER, p.CENTER);
-      p.text("*", 0, 0); // Draw asterisk centered at (0, 0)
+      p.text("*", 0, 0);
       p.pop();
     }
   }
