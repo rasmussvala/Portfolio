@@ -80,17 +80,20 @@ export default function sketch(p) {
     totalWidth -= letterSpacing; // Remove extra spacing after last letter
 
     let startX;
-    let offsetX;
+    let offsetX1;
+    let offsetX2;
     let offsetY;
     if (p.windowWidth < 900) {
       // Align to left when window width is less than 900
       startX = 16;
-      offsetX = 26;
+      offsetX1 = 40;
+      offsetX2 = 15;
       offsetY = 40;
     } else {
       // Center alignment for larger windows
       startX = (p.width - totalWidth) / 2;
-      offsetX = 30;
+      offsetX1 = 30;
+      offsetX2 = 30;
       offsetY = 0;
     }
 
@@ -107,8 +110,8 @@ export default function sketch(p) {
       x += w + letterSpacing;
     }
 
-    asterisks.push(new SpinningAsterisk(startX - offsetX, 210));
-    asterisks.push(new SpinningAsterisk(endX + offsetX, 100 + offsetY));
+    asterisks.push(new SpinningAsterisk(startX - offsetX1, 210));
+    asterisks.push(new SpinningAsterisk(endX + offsetX2, 100 + offsetY));
   }
 
 
