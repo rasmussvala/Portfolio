@@ -21,7 +21,7 @@ export default function sketch(p) {
   };
 
   p.setup = () => {
-    p.createCanvas(p.windowWidth, 400);
+    p.createCanvas(p.windowWidth, 430);
 
     // Initial text size setting
     adjustTextSize();
@@ -74,8 +74,22 @@ export default function sketch(p) {
     }
     totalWidth -= letterSpacing; // Remove extra spacing after last letter
 
-    let startX = (p.width - totalWidth) / 2;
-    let endX = (p.width + totalWidth) / 2;
+    let startX;
+    let offsetX;
+    let offsetY;
+    if (p.windowWidth < 900) {
+      // Align to left when window width is less than 900
+      startX = 16;
+      offsetX = 25;
+      offsetY = 40;
+    } else {
+      // Center alignment for larger windows
+      startX = (p.width - totalWidth) / 2;
+      offsetX = 30;
+      offsetY = 0;
+    }
+
+    let endX = startX + totalWidth;
     let x = startX;
 
     for (let i = 0; i < message.length; i++) {
@@ -88,9 +102,10 @@ export default function sketch(p) {
       x += w + letterSpacing;
     }
 
-    asterisks.push(new SpinningAsterisk(startX - 40, 210));
-    asterisks.push(new SpinningAsterisk(endX + 40, 100));
+    asterisks.push(new SpinningAsterisk(startX - offsetX, 210));
+    asterisks.push(new SpinningAsterisk(endX + offsetX, 100 + offsetY));
   }
+
 
   class SpinningAsterisk {
     constructor(x, y) {
