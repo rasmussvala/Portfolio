@@ -47,19 +47,24 @@ export default function sketch(p) {
   };
 
   p.windowResized = () => {
-    p.resizeCanvas(p.windowWidth, 400);
-    adjustTextSize(); // Adjust text size based on new window width
-    createLettersAndAsterisks("Rasmus Svala"); // Recreate letters and asterisks
+    // Ensure that the canvas and textSize are available before proceeding
+    if (p && p.canvas && typeof p.textSize === "function") {
+      p.resizeCanvas(p.windowWidth, 400);
+      adjustTextSize(); // Adjust text size based on new window width
+      createLettersAndAsterisks("Rasmus Svala"); // Recreate letters and asterisks
+    }
   };
 
-  // Function to adjust text size based on window width
   function adjustTextSize() {
-    if (p.windowWidth < 900) {
-      textSize = 60;
-    } else {
-      textSize = 120;
+    // Check if p.textSize is defined before using it
+    if (p && typeof p.textSize === "function") {
+      if (p.windowWidth < 900) {
+        textSize = 60;
+      } else {
+        textSize = 120;
+      }
+      p.textSize(textSize);
     }
-    p.textSize(textSize);
   }
 
   // Function to create and position letters and asterisks
@@ -80,7 +85,7 @@ export default function sketch(p) {
     if (p.windowWidth < 900) {
       // Align to left when window width is less than 900
       startX = 16;
-      offsetX = 25;
+      offsetX = 26;
       offsetY = 40;
     } else {
       // Center alignment for larger windows
