@@ -131,6 +131,11 @@ body {
   margin: auto;
 }
 
+.header {
+  padding-top: 15rem;
+  z-index: 10;
+}
+
 /* For screens wider than 900px (desktop) */
 @media (min-width: 901px) {
   .header p {
@@ -240,4 +245,12 @@ body {
 
 .card-image-container img {
   width: 100%;
+}
+
+.p5-canvas {
+  position: absolute;
+  flex-direction: column;
+  top: 0;
+  left: 0;
+  z-index: -1; /* Ensure canvas is behind header and other elements */
 }

@@ -14,7 +14,7 @@ const P5Wrapper = () => {
     };
   }, []);
 
-  return <div ref={canvasRef} />;
+  return <div ref={canvasRef} className="p5-canvas" />;
 };
 
 export default P5Wrapper;
