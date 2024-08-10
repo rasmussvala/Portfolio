@@ -27,6 +27,7 @@ export default function sketch(p) {
 
     // Calculate starting x-position to center the message
     let startX = (p.width - totalWidth) / 2;
+    let endX = (p.width + totalWidth) / 2;
     let x = startX;
 
     for (let i = 0; i < message.length; i++) {
@@ -40,8 +41,8 @@ export default function sketch(p) {
     }
 
     // Adjust asterisk positions
-    asterisks.push(new SpinningAsterisk(p.width * 0.23, 210));
-    asterisks.push(new SpinningAsterisk(p.width * 0.76, 100));
+    asterisks.push(new SpinningAsterisk(startX - 40, 210));
+    asterisks.push(new SpinningAsterisk(endX + 40, 100));
   };
 
   p.draw = () => {
