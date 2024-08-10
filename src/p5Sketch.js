@@ -8,6 +8,14 @@ export default function sketch(p) {
   let customFont;
   let textSize = 120; // Default text size
 
+  function getCSSVariable(variableName) {
+    return getComputedStyle(document.documentElement).getPropertyValue(variableName).trim();
+  }
+
+  const primaryColor = getCSSVariable("--primary-color");
+  const textColor = getCSSVariable("--text-color");
+  const backgroundColor = getCSSVariable("--background-color");
+
   p.preload = () => {
     customFont = p.loadFont("/Anton-Regular.ttf");
   };
@@ -25,7 +33,7 @@ export default function sketch(p) {
   };
 
   p.draw = () => {
-    p.background("#fffbf4");
+    p.background(backgroundColor);
 
     for (let letter of letters) {
       letter.update();
@@ -113,7 +121,7 @@ export default function sketch(p) {
       p.push();
       p.translate(this.position.x, this.position.y);
       p.rotate(this.angle);
-      p.fill("#000000");
+      p.fill(textColor);
       p.textSize(50);
       p.textAlign(p.CENTER, p.CENTER);
       p.text("*", 0, 0);
@@ -145,7 +153,7 @@ export default function sketch(p) {
     }
 
     display() {
-      p.fill("#fa4411");
+      p.fill(primaryColor);
       p.text(this.letter, this.position.x, this.position.y);
     }
   }
