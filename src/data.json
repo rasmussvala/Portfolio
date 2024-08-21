@@ -3,13 +3,15 @@
     "date": "October 2023",
     "title": "Global Illumination in C++",
     "image": "./assets/raytracing.png",
-    "description": "Crafted a Monte Carlo ray tracer in C++ that simulates realistic global illumination featuring transparent, reflective, and Lambertian surfaces."
+    "description": "Crafted a Monte Carlo ray tracer in C++ that simulates realistic global illumination featuring transparent, reflective, and Lambertian surfaces.",
+    "github": "https://github.com/rasmussvala/TNGC15-Global-Illumination"
   },
   {
     "date": "December 2023",
     "title": "Procedural Planet in THREE.js",
     "image": "./assets/planet.jpg",
-    "description": "Created a procedurally generated planet using noise to generate terrain, clouds, and stars in THREE.js. Try it here: <a href='https://proceduralplanet.vercel.app/' target='_blank'>procedural-planet.vercel.app</a>"
+    "description": "Created a procedurally generated planet using noise to generate terrain, clouds, and stars in THREE.js. Try it here: <a href='https://proceduralplanet.vercel.app/' target='_blank'>procedural-planet.vercel.app</a>",
+    "github": "https://github.com/rasmussvala/TNM084-Procedural-Planet"
   },
   {
     "date": "June 2023",
@@ -27,13 +29,15 @@
     "date": "October 2022",
     "title": "Singing Web Game in P5.js",
     "image": "./assets/ljudfysik.jpg",
-    "description": "Developed a singing game using the JavaScript library p5.js, where you have to collect candies by using your voice. Primarily managed user inputs. Explore more: <a href='https://spookypannkaka.itch.io/sjungande-phadderister' target='_blank'>itch.io/sjungande-phadderister</a>"
+    "description": "Developed a singing game using the JavaScript library p5.js, where you have to collect candies by using your voice. Primarily managed user inputs. Explore more: <a href='https://spookypannkaka.itch.io/sjungande-phadderister' target='_blank'>itch.io/sjungande-phadderister</a>",
+    "github": "https://github.com/spookypannkaka/Sjungande-Phadderister"
   },
   {
     "date": "December 2023",
     "title": "Chatbot using ML",
     "image": "./assets/chatbot.jpg",
-    "description": "Implemented a Python chatbot using TF-IDF and cosine similarity. Processes conversational datasets, extracts features, and engages in text-based conversations."
+    "description": "Implemented a Python chatbot using TF-IDF and cosine similarity. Processes conversational datasets, extracts features, and engages in text-based conversations.",
+    "github": "https://github.com/rasmussvala/TNM108-Machine-Learning-for-Social-Media/tree/main/Project"
   },
   {
     "date": "Mars 2023",
@@ -51,6 +55,7 @@
     "date": "June 2024",
     "title": "Online Multiplayer Mini Golf",
     "image": "./assets/webgolf.png",
-    "description": "Created a web-based multiplayer golf game where players can compete against each other in real-time. The game is created with React and Google Firebase for authentication and data management. The golf game itself is built using Three.js. Check it out here: <a href='https://webgolf.vercel.app/' target='_blank'>webgolf.vercel.app</a>"
+    "description": "Created a web-based multiplayer golf game where players can compete against each other in real-time. The game is created with React and Google Firebase for authentication and data management. The golf game itself is built using Three.js. Check it out here: <a href='https://webgolf.vercel.app/' target='_blank'>webgolf.vercel.app</a>",
+    "github": "https://github.com/rasmussvala/Web-Golf"
   }
 ]

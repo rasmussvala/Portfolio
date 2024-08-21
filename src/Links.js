@@ -8,7 +8,6 @@ export default function Links() {
     <div className="social-links">
       <a
         href="https://github.com/rasmussvala"
-        className="social-link"
         target="_blank"
         rel="noopener noreferrer"
       >
