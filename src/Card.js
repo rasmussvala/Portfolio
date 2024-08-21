@@ -24,14 +24,13 @@ function Card({ date, title, image: imagePath, description, github }) {
         {image && <img src={image} alt={title} />}
       </div>
       {github && (
-        <a
-          href={github}
-          className="github-project-link"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <FontAwesomeIcon icon={faGithub} style={{ color: "black" }} />
-        </a>
+        <div className="github-project-link-container">
+          <div className="github-project-link">
+            <a href={github} target="_blank" rel="noopener noreferrer">
+              <FontAwesomeIcon icon={faGithub} />
+            </a>
+          </div>
+        </div>
       )}
       <header className="card-header">
         <p style={{ fontWeight: "bold" }}>{title}</p>

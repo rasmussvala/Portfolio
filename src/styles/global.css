@@ -132,8 +132,25 @@ body {
   white-space: nowrap;
 }
 
-.github-project.link {
-  color: #121212;
+.github-project-link-container {
+  position: absolute;
+  display: flex;
+  background-color: var(--text-color);
+  border-radius: 50%;
+  top: 24px;
+  height: 26px;
+  width: 26px;
+  /* box-shadow: 0 0 10px rgba(0, 0, 0, 0.3); */
+}
+.github-project-link {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.github-project-link .fa-github {
+  transform: scale(1.4) translate(0px, 0.2px);
 }
 
 .social-links a {
@@ -153,12 +170,20 @@ body {
   margin: auto;
 }
 
+.github-project-link-container {
+  left: 86.7%;
+}
+
 /* For screens wider than 900px (desktop) */
 @media (min-width: 901px) {
   .header p {
     max-width: 800px;
     margin: auto;
     padding-bottom: 1em;
+  }
+
+  .github-project-link-container {
+    left: 88.4%;
   }
 
   .social-links {
