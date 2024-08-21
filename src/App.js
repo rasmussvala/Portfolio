@@ -52,6 +52,7 @@ function App() {
               title={project.title}
               image={project.image}
               description={project.description}
+              github={project.github}
             />
           ))}
         </section>
