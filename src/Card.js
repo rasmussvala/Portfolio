@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faGithub } from "@fortawesome/free-brands-svg-icons";
+import { faGithubAlt } from "@fortawesome/free-brands-svg-icons";
 
 function Card({ date, title, image: imagePath, description, github }) {
   const [image, setImage] = useState(null);
@@ -27,7 +27,7 @@ function Card({ date, title, image: imagePath, description, github }) {
         <div className="github-project-link-container">
           <div className="github-project-link">
             <a href={github} target="_blank" rel="noopener noreferrer">
-              <FontAwesomeIcon icon={faGithub} />
+              <FontAwesomeIcon icon={faGithubAlt} />
             </a>
           </div>
         </div>
