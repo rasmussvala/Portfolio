@@ -1,0 +1,30 @@
+[
+  {
+    "company": "Holavedsgymnasiet",
+    "location": "Tranås",
+    "title": "Technology programme; Information and media technology - High school diploma",
+    "period": "August 2016 - June 2019",
+    "description": "The program focuses on physics, chemistry and mathematics. It contains, among other things, courses in web development and programming."
+  },
+  {
+    "company": "Linköping University",
+    "location": "Norrköping",
+    "title": "Master of Science in Media Technology and Engineering",
+    "period": "August 2020 - June 2025 (Current)",
+    "description": "The program explores the technology behind the next generation of digital media, focusing on software, graphics visualization and generative AI."
+  },
+  {
+    "company": "Linköpings University",
+    "location": "Norrköping",
+    "title": "LiTHehack; Programming Assistant",
+    "period": "August 2023–June 2024",
+    "description": "LiTHehack is a student-run project at LiTH that exists to help students with programming."
+  },
+  {
+    "company": "Bosch Home Comfort",
+    "location": "Tranås",
+    "title": "Summer Worker/Internship in Software Engineering Department",
+    "period": "June 2024 – August 2024",
+    "description": "I drove IT development projects and focused on model-based development in the Matlab/Simulink environment."
+  }
+]

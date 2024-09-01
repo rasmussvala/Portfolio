@@ -1,10 +1,12 @@
 import "./styles/global.css";
 import projects from "./data.json";
+import experience from "./experience.json";
 import Card from "./Card.js";
 import Header from "./Header.js";
 import Links from "./Links";
 
 import { useState, useEffect } from "react";
+import ExperienceItem from "./ExperienceItem.js";
 
 // Convert date strings to a comparable format
 const parseDate = (dateString) => {
@@ -56,6 +58,21 @@ function App() {
             />
           ))}
         </section>
+
+        <h2>Experience</h2>
+
+        <div>
+          {experience.map((experience, index) => (
+            <ExperienceItem
+              key={index}
+              company={experience.company}
+              location={experience.location}
+              title={experience.title}
+              period={experience.period}
+              description={experience.description}
+            />
+          ))}
+        </div>
       </div>
       <footer>
         <p>
