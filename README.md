@@ -1,6 +1,6 @@
 # My Portfolio
 
-This repository contains the code for my personal portfolio website, built with React p5 and CSS. The site is hosted on Vercel. It showcases my projects and experiences in [Media Technology and Engineering](https://liu.se/en/education/program/6cmen) as a 4th-year MSc student.
+This repository contains the code for my personal portfolio website, built with React p5 and CSS. The site is hosted on Vercel. It showcases my projects and experiences in [Media Technology and Engineering](https://liu.se/en/education/program/6cmen) as a final-year MSc student.
 
 ### Key Features:
 
