@@ -7,9 +7,12 @@ export default function sketch(p) {
   let letterSpacing = 0;
   let customFont;
   let textSize = 120; // Default text size
+  let canvasHeight = 430;
 
   function getCSSVariable(variableName) {
-    return getComputedStyle(document.documentElement).getPropertyValue(variableName).trim();
+    return getComputedStyle(document.documentElement)
+      .getPropertyValue(variableName)
+      .trim();
   }
 
   const primaryColor = getCSSVariable("--primary-color");
@@ -21,7 +24,7 @@ export default function sketch(p) {
   };
 
   p.setup = () => {
-    p.createCanvas(p.windowWidth, 430);
+    p.createCanvas(p.windowWidth, canvasHeight);
 
     // Initial text size setting
     adjustTextSize();
@@ -49,7 +52,7 @@ export default function sketch(p) {
   p.windowResized = () => {
     // Ensure that the canvas and textSize are available before proceeding
     if (p && p.canvas && typeof p.textSize === "function") {
-      p.resizeCanvas(p.windowWidth, 400);
+      p.resizeCanvas(p.windowWidth, canvasHeight);
       adjustTextSize(); // Adjust text size based on new window width
       createLettersAndAsterisks("Rasmus Svala"); // Recreate letters and asterisks
     }
@@ -113,7 +116,6 @@ export default function sketch(p) {
     asterisks.push(new SpinningAsterisk(startX - offsetX1, 210));
     asterisks.push(new SpinningAsterisk(endX + offsetX2, 100 + offsetY));
   }
-
 
   class SpinningAsterisk {
     constructor(x, y) {
