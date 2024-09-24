@@ -37,7 +37,7 @@ function App() {
             I grew up in Tranås, Sweden. I currently live in Norrköping, where I
             study at Linköping University. I enjoy coding and learning new
             things. I've tried a lot of programming languages, and so far I have
-            C++, JavaScript, React, HTML, CSS, Java, MATLAB, and some Git/GitHub
+            C++, JavaScript, React, HTML, CSS, Python, MATLAB, and some Git
             under my belt. When I'm not coding, I also enjoy playing video games
             and working out.
           </p>
