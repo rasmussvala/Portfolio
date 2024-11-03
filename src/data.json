@@ -57,5 +57,12 @@
     "image": "./assets/webgolf.png",
     "description": "Created a web-based multiplayer golf game where players can compete against each other in real-time. The game is created with React and Google Firebase for authentication and data management. The golf game itself is built using Three.js. Check it out here: <a href='https://webgolf.vercel.app/' target='_blank'>webgolf.vercel.app</a>",
     "github": "https://github.com/rasmussvala/Web-Golf"
+  },
+  {
+    "date": "October 2024",
+    "title": "Cheddar Chase: A Godot Game",
+    "image": "./assets/cheddar-chase.png",
+    "description": "Created a 2D, top-down pixel art platformer, built in Godot,where you play as a mouse collecting cheese while dodging enemies. Featuring custom Aseprite art, AI behavior, and original Beepbox sound and music. Try it here: <a href='https://rasmussvala.itch.io/cheddar-chase' target='_blank'>itch.io/cheddar-chase</a>",
+    "github": "https://github.com/rasmussvala/Cheddar-Chase"
   }
 ]
