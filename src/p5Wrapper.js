@@ -1,22 +1,23 @@
 import React, { useRef, useEffect, useState } from "react";
 import p5 from "p5";
-import sketch from "./p5Sketch"; // Adjust the path if necessary
+import sketch from "./p5Sketch";
 
 const P5Wrapper = () => {
   const canvasRef = useRef(null);
   const [theme, setTheme] = useState(
-    window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light"
+    window.matchMedia("(prefers-color-scheme: dark)").matches
+      ? "dark"
+      : "light",
   );
 
   useEffect(() => {
     let canvas = new p5(sketch, canvasRef.current);
 
     return () => {
-      canvas.remove(); // Clean up the p5 instance on component unmount or theme change
+      canvas.remove();
     };
-  }, [theme]); // Add theme as a dependency to rerender when theme changes
+  }, [theme]);
 
-  // Detect system theme changes
   useEffect(() => {
     const mediaQuery = window.matchMedia("(prefers-color-scheme: dark)");
 

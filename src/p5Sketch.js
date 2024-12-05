@@ -4,9 +4,8 @@ export default function sketch(p) {
   let letters = [];
   let asterisks = [];
   let originalPositions = [];
-  let letterSpacing = 0;
   let customFont;
-  let textSize = 120; // Default text size
+  let textSize = 120;
   let canvasHeight = 430;
 
   function getCSSVariable(variableName) {
@@ -53,8 +52,8 @@ export default function sketch(p) {
     // Ensure that the canvas and textSize are available before proceeding
     if (p && p.canvas && typeof p.textSize === "function") {
       p.resizeCanvas(p.windowWidth, canvasHeight);
-      adjustTextSize(); // Adjust text size based on new window width
-      createLettersAndAsterisks("Rasmus Svala"); // Recreate letters and asterisks
+      adjustTextSize();
+      createLettersAndAsterisks("Rasmus Svala");
     }
   };
 
@@ -78,9 +77,8 @@ export default function sketch(p) {
 
     let totalWidth = 0;
     for (let i = 0; i < message.length; i++) {
-      totalWidth += p.textWidth(message.charAt(i)) + letterSpacing;
+      totalWidth += p.textWidth(message.charAt(i));
     }
-    totalWidth -= letterSpacing; // Remove extra spacing after last letter
 
     let startX;
     let offsetX1;
@@ -110,7 +108,7 @@ export default function sketch(p) {
       letters.push(new MovableLetter(letter, x, p.height / 2));
       originalPositions.push(p.createVector(x, p.height / 2));
 
-      x += w + letterSpacing;
+      x += w;
     }
 
     asterisks.push(new SpinningAsterisk(startX - offsetX1, 210));
