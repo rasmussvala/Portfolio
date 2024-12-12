@@ -4,9 +4,27 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Rasmus Svala</title>
-    <link rel="icon" type="image/x-icon" href="icon.png" />
+    <!-- Default icon -->
+    <link id="favicon" rel="icon" type="image/x-icon" href="icon_light.png" />
   </head>
   <body>
     <div id="root"></div>
+    <script>
+      function updateFavicon() {
+        const favicon = document.getElementById("favicon");
+        const isDarkMode = window.matchMedia(
+          "(prefers-color-scheme: dark)"
+        ).matches;
+        favicon.href = isDarkMode ? "icon_dark.png" : "icon_light.png";
+      }
+
+      // Initial call to set the correct favicon
+      updateFavicon();
+
+      // Listen for theme changes
+      window
+        .matchMedia("(prefers-color-scheme: dark)")
+        .addEventListener("change", updateFavicon);
+    </script>
   </body>
 </html>
