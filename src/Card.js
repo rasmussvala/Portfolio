@@ -2,26 +2,39 @@ import React, { useState, useEffect } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faGithubAlt } from "@fortawesome/free-brands-svg-icons";
 
-function Card({ date, title, image: imagePath, description, github }) {
+function Card({ date, title, imagePath, gifPath, description, github }) {
+  const [isHovered, setIsHovered] = useState(false);
+
   const [image, setImage] = useState(null);
+  const [gif, setGif] = useState(null);
 
   useEffect(() => {
     const importImage = async () => {
-      try {
-        const imgModule = await import(`${imagePath}`);
-        setImage(imgModule.default);
-      } catch (error) {
-        console.error("Error loading image:", error);
-      }
+      const imgModule = await import(`${imagePath}`);
+      setImage(imgModule.default);
     };
 
+    const importGif = async () => {
+      const gifModule = await import(`${gifPath}`);
+      setGif(gifModule.default);
+    }
+
     importImage();
+    if (gifPath) importGif();
   }, [imagePath]);
 
   return (
     <article className="card">
-      <div className="card-image-container">
-        {image && <img src={image} alt={title} />}
+      <div className="card-image-container"
+        onMouseEnter={() => setIsHovered(true)}
+        onMouseLeave={() => setIsHovered(false)}
+      >
+        <img
+          className={isHovered && gifPath ? "hovered" : "non-hovered"}
+
+          src={isHovered && gifPath ? gif : image}
+          alt={title}
+        />
       </div>
       {github && (
         <div className="github-project-link-container">

@@ -50,7 +50,8 @@ function App() {
               key={index}
               date={project.date}
               title={project.title}
-              image={project.image}
+              imagePath={project.image}
+              gifPath={project.gif ? project.gif : null}
               description={project.description}
               github={project.github}
             />
