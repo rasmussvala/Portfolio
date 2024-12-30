@@ -3,7 +3,7 @@
 :root {
   --text-color: #121212;
   --background-color: #fffbf4;
-  --primary-color: #fa4411; /*alt 2: #394390*/
+  --primary-color: #fa4411;
   --accent-color: #6f6350;
 }
 
@@ -11,7 +11,7 @@
   :root {
     --text-color: #fffbf4;
     --background-color: #121212;
-    --primary-color: #394390; /*alt 2: #394390*/
+    --primary-color: #394390;
     --accent-color: #2e2e2e;
   }
 }
@@ -236,7 +236,6 @@ body {
 
   display: flex;
   flex-direction: column;
-  transition: 0.2s;
   margin: 0;
   scroll-snap-align: start;
   clear: both;
@@ -264,8 +263,8 @@ body {
 
 .card-image-container {
   display: flex;
-  justify-content: center; /* Horizontal centering */
-  align-items: center; /* Vertical centering */
+  justify-content: center; /* Horizontal */
+  align-items: center; /* Vertical */
   position: relative;
   overflow: hidden;
   border-radius: 6px;
@@ -276,6 +275,18 @@ body {
 
 .card-image-container img {
   width: 100%;
+  object-fit: cover;
+  transition: transform 0.3s ease-in-out, opacity 0.3s ease;
+}
+
+.card-image-container img.hovered {
+  transform: scale(1.1);
+  opacity: 1;
+}
+
+.card-image-container img.non-hovered {
+  transform: scale(1);
+  opacity: 0.9;
 }
 
 .p5-canvas {
