@@ -24,7 +24,7 @@ function Card({ date, title, imagePath, gifPath, description, github }) {
   }, [imagePath]);
 
   return (
-    <article className="item">
+    <article className="card">
       <div className="card-image-container"
         onMouseEnter={() => setIsHovered(true)}
         onMouseLeave={() => setIsHovered(false)}
