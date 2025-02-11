@@ -161,6 +161,11 @@ body {
 
 /* For screens wider than 900px (desktop) */
 @media (min-width: 901px) {
+  .container {
+    padding-left: 24px;
+    padding-right: 24px;
+  }
+
   .header p {
     max-width: 800px;
     margin: auto;
@@ -193,6 +198,11 @@ body {
 
 /* For screens 900px and narrower (mobile) */
 @media (max-width: 900px) {
+  .container {
+    padding-left: 16px;
+    padding-right: 16px;
+  }
+
   .header {
     padding-left: 1rem;
     padding-right: 1rem;
@@ -268,7 +278,6 @@ body {
   position: relative;
   overflow: hidden;
   border-radius: 6px;
-  margin-bottom: 0.5rem;
   object-fit: cover;
 }
 
@@ -296,15 +305,18 @@ body {
   z-index: -1; /* Ensure canvas is behind header and other elements */
 }
 
-
 /* MASONRY, remove card and card-list if you want to use this */
 
+:root {
+  --gap: 1em;
+  --item-width: 300px;
+}
+
 .container {
-  max-width: 60rem;
+  max-width: 100%;
   margin: 0 auto;
-  column-count: var(--columns);
+  column-width: var(--item-width);
   column-gap: var(--gap);
-  padding-top: 1rem;
 }
 
 .container > .item {
@@ -315,7 +327,7 @@ body {
 @supports (grid-template-rows: masonry) {
   .container {
     display: grid;
-    grid-template-columns: repeat(var(--columns), 1fr);
+    grid-template-columns: repeat(auto-fill, minmax(var(--item-width), 1fr));
     grid-template-rows: masonry;
     grid-auto-flow: dense;
   }
@@ -324,4 +336,3 @@ body {
     margin-bottom: 0;
   }
 }
-
