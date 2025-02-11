@@ -34,12 +34,7 @@ function App() {
         <h2>About me</h2>
         <div className="about-me-text">
           <p>
-            I grew up in Tranås, Sweden. I currently live in Norrköping, where I
-            study at Linköping University. I enjoy coding and learning new
-            things. I've tried a lot of programming languages, and so far I have
-            C++, JavaScript, React, HTML, CSS, Python, MATLAB, and some Git
-            under my belt. When I'm not coding, I also enjoy playing video games
-            and working out.
+            I grew up in Tranås, Sweden, and currently live in Norrköping, where I study at Linköping University. I enjoy coding and learning new things. I have explored a variety of programming languages and environments, including C++, Python, web development, game development, and some Git. When I'm not coding, I also enjoy playing video games, working out and being active.
           </p>
         </div>
 
@@ -60,7 +55,7 @@ function App() {
       </div>
       <footer>
         <p>
-          2024 Designed and created by me. Find the source code on{" "}
+          2025 Designed and created by me. Find the source code on{" "}
           <a href="https://github.com/rasmussvala/Portfolio">GitHub</a>.
         </p>
       </footer>
