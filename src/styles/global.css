@@ -5,6 +5,11 @@
   --background-color: #fffbf4;
   --primary-color: #fa4411;
   --accent-color: #6f6350;
+
+  --modal-shadow: 0.3;
+
+  --gap: 1em;
+  --item-width: 300px;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -14,8 +19,7 @@
     --primary-color: #394390;
     --accent-color: #2e2e2e;
 
-    --gap: 1em;
-    --item-width: 300px;
+    --modal-shadow: 1;
   }
 }
 
@@ -319,14 +323,19 @@ body {
 }
 
 .modal-content {
-  box-shadow: 0 0 200px rgba(0, 0, 0, 1);
+  box-shadow: 0 0 200px rgba(0, 0, 0, var(--modal-shadow));
   background: var(--background-color);
   padding: 20px;
+  margin: 6px;
   border-radius: 16px;
   max-width: 600px;
   width: 100%;
   box-sizing: border-box;
   position: relative;
+}
+
+.modal-content p {
+  margin-bottom: 0;
 }
 
 .modal-image {
