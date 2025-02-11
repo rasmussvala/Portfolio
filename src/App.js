@@ -39,7 +39,7 @@ function App() {
         </div>
 
         <h2>Projects</h2>
-        <section className="card-list">
+        <section className="container">
           {sortedProjects.map((project, index) => (
             <Card
               key={index}

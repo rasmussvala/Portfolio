@@ -24,7 +24,7 @@ function Card({ date, title, imagePath, gifPath, description, github }) {
   }, [imagePath]);
 
   return (
-    <article className="card">
+    <article className="item">
       <div className="card-image-container"
         onMouseEnter={() => setIsHovered(true)}
         onMouseLeave={() => setIsHovered(false)}
@@ -36,7 +36,7 @@ function Card({ date, title, imagePath, gifPath, description, github }) {
           alt={title}
         />
       </div>
-      {github && (
+      {/* {github && (
         <div className="github-project-link-container">
           <div className="github-project-link">
             <a href={github} target="_blank" rel="noopener noreferrer">
@@ -49,7 +49,7 @@ function Card({ date, title, imagePath, gifPath, description, github }) {
         <p style={{ fontWeight: "bold" }}>{title}</p>
         <p>{date}</p>
       </header>
-      <p dangerouslySetInnerHTML={{ __html: description }} />
+      <p dangerouslySetInnerHTML={{ __html: description }} /> */}
     </article>
   );
 }

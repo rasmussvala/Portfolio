@@ -269,7 +269,6 @@ body {
   overflow: hidden;
   border-radius: 6px;
   margin-bottom: 0.5rem;
-  margin-top: 1rem;
   object-fit: cover;
 }
 
@@ -296,3 +295,33 @@ body {
   left: 0;
   z-index: -1; /* Ensure canvas is behind header and other elements */
 }
+
+
+/* MASONRY, remove card and card-list if you want to use this */
+
+.container {
+  max-width: 60rem;
+  margin: 0 auto;
+  column-count: var(--columns);
+  column-gap: var(--gap);
+  padding-top: 1rem;
+}
+
+.container > .item {
+  break-inside: avoid;
+  margin-bottom: var(--gap);
+}
+
+@supports (grid-template-rows: masonry) {
+  .container {
+    display: grid;
+    grid-template-columns: repeat(var(--columns), 1fr);
+    grid-template-rows: masonry;
+    grid-auto-flow: dense;
+  }
+
+  .container > .item {
+    margin-bottom: 0;
+  }
+}
+
