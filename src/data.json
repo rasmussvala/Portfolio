@@ -71,5 +71,21 @@
     "gif": "./assets/cheddar-chase.gif",
     "description": "Created a 2D, top-down pixel art platformer, built in Godot, where you play as a mouse collecting cheese while dodging enemies. Featuring custom Aseprite art, AI behavior, and original Beepbox sound and music. Cheddar Chase was honored as a <a href='https://liu.se/liugameawards' target='_blank'>LIU Game Award finalist</a>. Try it here: <a href='https://rasmussvala.itch.io/cheddar-chase' target='_blank'>itch.io/cheddar-chase</a>.",
     "github": "https://github.com/rasmussvala/Cheddar-Chase"
+  },
+  {
+    "date": "December 2024",
+    "title": "React Native Password Validator",
+    "image": "./assets/password-validator.png",
+    "gif": "./assets/password-validator.gif",
+    "description": "A customizable React Native component for evaluating and displaying password strength. It provides password recommendations, dynamic status indicators, and support for password confirmation with visual feedback. Published on npm: <a href='https://www.npmjs.com/package/react-native-password-validator' target='_blank'>react-native-password-validator</a>",
+    "github": "https://github.com/rasmussvala/react-native-password-validator"
+  },
+  {
+    "date": "December 2024",
+    "title": "React Native Bank Card Form",
+    "image": "./assets/bank-card-form.png",
+    "gif": "./assets/bank-card-form.gif",
+    "description": "A React Native UI component designed to handle bank card input values. It includes multiple callback functions to manage changes within the component. Published on npm: <a href='https://www.npmjs.com/package/react-native-bank-card-form' target='_blank'>react-native-bank-card-form</a>",
+    "github": "https://github.com/Grantallkotten/react-native-bank-card-form"
   }
 ]
