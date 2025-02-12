@@ -307,6 +307,36 @@ body {
   align-items: center;
   justify-content: center;
   z-index: 1000;
+
+  /* Base animation properties */
+  animation-duration: 0.5s;
+  animation-fill-mode: forwards;
+}
+
+.fadeIn {
+  animation-name: fadeInAnimation;
+}
+
+.fadeOut {
+  animation-name: fadeOutAnimation;
+}
+
+@keyframes fadeInAnimation {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes fadeOutAnimation {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
 }
 
 .modal-content {
