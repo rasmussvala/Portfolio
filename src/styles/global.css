@@ -128,7 +128,8 @@ body {
   align-items: end;
   background-color: #fffbf4;
   border-radius: 50%;
-  top: 24px;
+  top: 30px;
+  left: 30px;
   height: 20px;
   width: 20px;
   box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
@@ -137,12 +138,6 @@ body {
 .github-project-link path {
   color: #121212;
 }
-
-/* .github-project-link {
-  display: flex;
-  justify-content: center;
-  align-items: end;
-} */
 
 .social-links a {
   text-decoration: none;
@@ -177,10 +172,6 @@ body {
     max-width: 800px;
     margin: auto;
     padding-bottom: 1em;
-  }
-
-  .github-project-link-container {
-    left: calc(400px - 13px);
   }
 
   .social-links {
@@ -218,10 +209,6 @@ body {
 
   .social-links {
     justify-content: flex-start;
-  }
-
-  .github-project-link-container {
-    left: calc(345px - 13px);
   }
 
   h1 {
