@@ -87,5 +87,29 @@
     "gif": "./assets/bank-card-form.gif",
     "description": "A React Native UI component designed to handle bank card input values. It includes multiple callback functions to manage changes within the component. Published on npm: <a href='https://www.npmjs.com/package/react-native-bank-card-form' target='_blank'>react-native-bank-card-form</a>",
     "github": "https://github.com/Grantallkotten/react-native-bank-card-form"
+  },
+  {
+    "date": "February 2025",
+    "title": "Lightfall - Bigmode Game Jam",
+    "image": "./assets/lightfall.png",
+    "gif": "./assets/lightfall.png",
+    "description": "Created a A 2D platformer where you play as a light source and must collect batteries to stay alive for <a href='https://itch.io/jam/bigmode-game-jam-2025' target='_blank'>Bigmode Game Jam 2025</a>. Try it here: <a href='https://rasmussvala.itch.io/lightfall' target='_blank'>itch.io/lightfall</a>",
+    "github": "https://github.com/rasmussvala/Bigmode-Game-Jam-2025"
+  },
+  {
+    "date": "February 2023",
+    "title": "Particle System in C++",
+    "image": "./assets/particle.png",
+    "gif": "./assets/particle.gif",
+    "description": "Created a minimal particle system with a small graphical interface that allows for visual editing of parameters.",
+    "github": "https://github.com/rasmussvala/TNM094-Particle-System"
+  },
+  {
+    "date": "February 2025",
+    "title": "Simple Pong in Unity",
+    "image": "./assets/pong.png",
+    "gif": "./assets/pong.gif",
+    "description": "Created a minimal Pong game in Unity, featuring smooth paddle controls, basic AI, and score tracking. Try it on <a href='https://rasmussvala.itch.io/simple-pong' target='_blank'>itch.io/simple-pong</a>",
+    "github": "https://github.com/rasmussvala/Simple-Pong-Game"
   }
 ]
