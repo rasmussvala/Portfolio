@@ -5,6 +5,11 @@
   --background-color: #fffbf4;
   --primary-color: #fa4411;
   --accent-color: #6f6350;
+
+  --modal-shadow: 0.3;
+
+  --gap: 1em;
+  --item-width: 300px;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -13,6 +18,8 @@
     --background-color: #121212;
     --primary-color: #394390;
     --accent-color: #2e2e2e;
+
+    --modal-shadow: 1;
   }
 }
 
@@ -121,7 +128,8 @@ body {
   align-items: end;
   background-color: #fffbf4;
   border-radius: 50%;
-  top: 24px;
+  top: 30px;
+  left: 30px;
   height: 20px;
   width: 20px;
   box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
@@ -130,12 +138,6 @@ body {
 .github-project-link path {
   color: #121212;
 }
-
-/* .github-project-link {
-  display: flex;
-  justify-content: center;
-  align-items: end;
-} */
 
 .social-links a {
   text-decoration: none;
@@ -161,14 +163,15 @@ body {
 
 /* For screens wider than 900px (desktop) */
 @media (min-width: 901px) {
+  .card-container {
+    padding-left: 24px;
+    padding-right: 24px;
+  }
+
   .header p {
     max-width: 800px;
     margin: auto;
     padding-bottom: 1em;
-  }
-
-  .github-project-link-container {
-    left: calc(400px - 13px);
   }
 
   .social-links {
@@ -185,14 +188,15 @@ body {
     padding-left: 24px;
     padding-right: 24px;
   }
-
-  .card {
-    min-width: 400px;
-  }
 }
 
 /* For screens 900px and narrower (mobile) */
 @media (max-width: 900px) {
+  .card-container {
+    padding-left: 16px;
+    padding-right: 16px;
+  }
+
   .header {
     padding-left: 1rem;
     padding-right: 1rem;
@@ -207,10 +211,6 @@ body {
     justify-content: flex-start;
   }
 
-  .github-project-link-container {
-    left: calc(345px - 13px);
-  }
-
   h1 {
     font-size: 3rem;
     text-align: left;
@@ -221,33 +221,9 @@ body {
     padding-right: 1rem;
     font-size: 2rem;
   }
-
-  .card {
-    min-width: 345px;
-  }
 }
 
 /* ------- CARD Style ------- */
-
-.card {
-  height: 450px;
-  padding-left: 1rem;
-  padding-right: 1rem;
-
-  display: flex;
-  flex-direction: column;
-  margin: 0;
-  scroll-snap-align: start;
-  clear: both;
-  position: relative;
-}
-
-.card-list {
-  display: flex;
-  overflow-x: scroll;
-  border-left: 1px solid var(--accent-color);
-  border-right: 1px solid var(--accent-color);
-}
 
 .card-header {
   margin: 0;
@@ -268,8 +244,6 @@ body {
   position: relative;
   overflow: hidden;
   border-radius: 6px;
-  margin-bottom: 0.5rem;
-  margin-top: 1rem;
   object-fit: cover;
 }
 
@@ -279,14 +253,9 @@ body {
   transition: transform 0.3s ease-in-out, opacity 0.3s ease;
 }
 
-.card-image-container img.hovered {
+.card-image-container img:hover {
+  cursor: pointer;
   transform: scale(1.1);
-  opacity: 1;
-}
-
-.card-image-container img.non-hovered {
-  transform: scale(1);
-  opacity: 0.9;
 }
 
 .p5-canvas {
@@ -295,4 +264,100 @@ body {
   top: 0;
   left: 0;
   z-index: -1; /* Ensure canvas is behind header and other elements */
+}
+
+/* MASONRY */
+
+.card-container {
+  max-width: 100%;
+  margin: 0 auto;
+  column-width: var(--item-width);
+  column-gap: var(--gap);
+  padding-top: 10px;
+}
+
+.card-container > .card {
+  break-inside: avoid;
+  margin-bottom: var(--gap);
+}
+
+@supports (grid-template-rows: masonry) {
+  .card-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(var(--item-width), 1fr));
+    grid-template-rows: masonry;
+    grid-auto-flow: dense;
+  }
+
+  .card-container > .card {
+    margin-bottom: 0;
+  }
+}
+
+/* ------- MODAL Styles ------- */
+
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+
+  /* Base animation properties */
+  animation-duration: 0.5s;
+  animation-fill-mode: forwards;
+}
+
+.fadeIn {
+  animation-name: fadeInAnimation;
+}
+
+.fadeOut {
+  animation-name: fadeOutAnimation;
+}
+
+@keyframes fadeInAnimation {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes fadeOutAnimation {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+.modal-content {
+  box-shadow: 0 0 200px rgba(0, 0, 0, var(--modal-shadow));
+  background: var(--background-color);
+  padding: 20px;
+  margin: 6px;
+  border-radius: 16px;
+  max-width: 600px;
+  width: 100%;
+  box-sizing: border-box;
+  position: relative;
+}
+
+.modal-content p {
+  margin-bottom: 0;
+}
+
+.modal-image {
+  width: 100%;
+  height: auto;
+  margin-bottom: 1rem;
+  border-radius: 6px;
 }
