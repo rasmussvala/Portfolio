@@ -14,7 +14,7 @@ export default function sketch(p) {
       .trim();
   }
 
-  const primaryColor = getCSSVariable("--primary-color");
+  const primaryColor = getCSSVariable("--header-color");
   const textColor = getCSSVariable("--text-color");
   const backgroundColor = getCSSVariable("--background-color");
 

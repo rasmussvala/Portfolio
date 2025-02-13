@@ -3,8 +3,8 @@
 :root {
   --text-color: #121212;
   --background-color: #fffbf4;
-  --primary-color: #fa4411;
-  --accent-color: #6f6350;
+  --primary-color: #d73204;
+  --header-color: #fa4411;
 
   --modal-shadow: 0.3;
 
@@ -16,8 +16,8 @@
   :root {
     --text-color: #fffbf4;
     --background-color: #121212;
-    --primary-color: #394390;
-    --accent-color: #2e2e2e;
+    --primary-color: #6d77c5;
+    --header-color: #4c59b8;
 
     --modal-shadow: 1;
   }
