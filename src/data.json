@@ -83,7 +83,7 @@
   {
     "date": "December 2024",
     "title": "React Native Bank Card Form",
-    "image": "./assets/bank-card-form.png",
+    "image": "./assets/bank-card-form.jpeg",
     "gif": "./assets/bank-card-form.gif",
     "description": "A React Native UI component designed to handle bank card input values. It includes multiple callback functions to manage changes within the component. Published on npm: <a href='https://www.npmjs.com/package/react-native-bank-card-form' target='_blank'>react-native-bank-card-form</a>",
     "github": "https://github.com/Grantallkotten/react-native-bank-card-form"
