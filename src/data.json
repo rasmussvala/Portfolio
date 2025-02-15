@@ -105,11 +105,19 @@
     "github": "https://github.com/rasmussvala/TNM094-Particle-System"
   },
   {
-    "date": "February 2025",
+    "date": "January 2025",
     "title": "Simple Pong in Unity",
     "image": "./assets/pong.png",
     "gif": "./assets/pong.gif",
     "description": "Created a minimal Pong game in Unity, featuring smooth paddle controls, basic AI, and score tracking. Try it on <a href='https://rasmussvala.itch.io/simple-pong' target='_blank'>itch.io/simple-pong</a>",
     "github": "https://github.com/rasmussvala/Simple-Pong-Game"
+  },
+  {
+    "date": "February 2025",
+    "title": "Simple Snake in Unity",
+    "image": "./assets/snake.png",
+    "gif": "./assets/snake.gif",
+    "description": "Created a minimal retro snake game in Unity. Try it on <a href='https://rasmussvala.itch.io/simple-snake' target='_blank'>itch.io/simple-snake</a>",
+    "github": "https://github.com/rasmussvala/Simple-Snake-Game"
   }
 ]
