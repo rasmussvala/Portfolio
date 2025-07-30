@@ -9,8 +9,7 @@ export default function Header() {
         <div className="text-container">
           <P5Wrapper />
           <p>
-            Hi, my name is Rasmus and I'm a final-year MSc student in Media
-            Technology and Engineering, based in Norrköping, Sweden.
+            Hi, I'm Rasmus, a software engineer with an M.Sc. in Media Technology and Engineering, based in Linköping, Sweden.
           </p>
         </div>
       </header>
