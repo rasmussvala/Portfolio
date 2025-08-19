@@ -1,5 +1,3 @@
-// src/components/Header.js
-import React from "react";
 import P5Wrapper from "./p5Wrapper";
 
 export default function Header() {

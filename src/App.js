@@ -20,7 +20,7 @@ function App() {
     .slice()
     .sort((a, b) => parseDate(b.date) - parseDate(a.date));
 
-  // Set loaded to true
+  // Set loaded to true to trigger the CSS animation
   useEffect(() => {
     setIsLoaded(true);
   }, []);

@@ -2,8 +2,8 @@ import p5 from "p5";
 
 export default function sketch(p) {
   let letters = [];
+  let lettersOriginalPositions = [];
   let asterisks = [];
-  let originalPositions = [];
   let customFont;
   let textSize = 120;
   let canvasHeight = 430;
@@ -72,8 +72,8 @@ export default function sketch(p) {
   // Function to create and position letters and asterisks
   function createLettersAndAsterisks(message) {
     letters = [];
+    lettersOriginalPositions = [];
     asterisks = [];
-    originalPositions = [];
 
     let totalWidth = 0;
     for (let i = 0; i < message.length; i++) {
@@ -106,13 +106,31 @@ export default function sketch(p) {
       let w = p.textWidth(letter);
 
       letters.push(new MovableLetter(letter, x, p.height / 2));
-      originalPositions.push(p.createVector(x, p.height / 2));
+      lettersOriginalPositions.push(p.createVector(x, p.height / 2));
 
       x += w;
     }
 
     asterisks.push(new SpinningAsterisk(startX - offsetX1, 210));
     asterisks.push(new SpinningAsterisk(endX + offsetX2, 100 + offsetY));
+  }
+
+  // Shared update logic for mouse repulsion and return-to-origin
+  function updatePositionWithMouseRepulsion(position, getOriginalPosition) {
+    let mousePosition = p.createVector(p.mouseX, p.mouseY);
+    let direction = p5.Vector.sub(position, mousePosition);
+    let distance = direction.mag();
+
+    if (distance < 100) {
+      direction.normalize();
+      let force = p.map(distance, 0, 100, 10, 0);
+      direction.mult(force);
+      position.add(direction);
+    } else {
+      const originalPosition = getOriginalPosition();
+      position.x = p.lerp(position.x, originalPosition.x, 0.1);
+      position.y = p.lerp(position.y, originalPosition.y, 0.1);
+    }
   }
 
   class SpinningAsterisk {
@@ -124,20 +142,10 @@ export default function sketch(p) {
 
     update() {
       this.angle += 0.02;
-
-      let mousePos = p.createVector(p.mouseX, p.mouseY);
-      let dir = p5.Vector.sub(this.position, mousePos);
-      let d = dir.mag();
-
-      if (d < 100) {
-        dir.normalize();
-        let force = p.map(d, 0, 100, 10, 0);
-        dir.mult(force);
-        this.position.add(dir);
-      } else {
-        this.position.x = p.lerp(this.position.x, this.originalPosition.x, 0.1);
-        this.position.y = p.lerp(this.position.y, this.originalPosition.y, 0.1);
-      }
+      updatePositionWithMouseRepulsion(
+        this.position,
+        () => this.originalPosition
+      );
     }
 
     display() {
@@ -159,20 +167,10 @@ export default function sketch(p) {
     }
 
     update() {
-      let mousePos = p.createVector(p.mouseX, p.mouseY);
-      let dir = p5.Vector.sub(this.position, mousePos);
-      let d = dir.mag();
-
-      if (d < 100) {
-        dir.normalize();
-        let force = p.map(d, 0, 100, 10, 0);
-        dir.mult(force);
-        this.position.add(dir);
-      } else {
-        let originalPos = originalPositions[letters.indexOf(this)];
-        this.position.x = p.lerp(this.position.x, originalPos.x, 0.1);
-        this.position.y = p.lerp(this.position.y, originalPos.y, 0.1);
-      }
+      updatePositionWithMouseRepulsion(
+        this.position,
+        () => lettersOriginalPositions[letters.indexOf(this)]
+      );
     }
 
     display() {
