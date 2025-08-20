@@ -1,9 +1,6 @@
-import { useState, useEffect } from "react";
+import React, { useState, useEffect } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faGithubAlt } from "@fortawesome/free-brands-svg-icons";
-import Skeleton from 'react-loading-skeleton'
-import 'react-loading-skeleton/dist/skeleton.css';
-
 
 function Card({ date, title, imagePath, gifPath, description, github }) {
   const [isModalOpen, setIsModalOpen] = useState(false);
@@ -68,20 +65,7 @@ function Card({ date, title, imagePath, gifPath, description, github }) {
               </div>
             )}
 
-            {gifPath ? (
-              gif ? (
-                <img src={gif} alt={title} className="modal-image" />
-              ) : (
-                <Skeleton
-                  count={1}
-                  className="skeleton-image"
-                  baseColor="#858585ff"
-                  highlightColor="#9b9b9bff"
-                />
-              )
-            ) : (
-              <img src={image} alt={title} className="modal-image" />
-            )}
+            <img src={gifPath ? gif : image} alt={title} className="modal-image" />
 
             <header className="card-header">
               <p style={{ fontWeight: "bold" }}>{title}</p>
