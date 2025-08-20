@@ -68,16 +68,24 @@ function Card({ date, title, imagePath, gifPath, description, github }) {
               </div>
             )}
 
-            {(gifPath ? !gif : !image) ? (
-              <Skeleton
-                count={1}
-                className="skeleton-image"
-                baseColor="#858585ff"
-                highlightColor="#9b9b9bff"
-              />
-            ) : (
-              <img src={gifPath ? gif : image} alt={title} className="modal-image" />
-            )}
+            {gifPath
+              ? (!gif
+                ? <Skeleton
+                  count={1}
+                  className="skeleton-image"
+                  baseColor="#858585ff"
+                  highlightColor="#9b9b9bff"
+                />
+                : <img src={gif} alt={title} className="modal-image" />)
+              : (!image
+                ? <Skeleton
+                  count={1}
+                  className="skeleton-image"
+                  baseColor="#858585ff"
+                  highlightColor="#9b9b9bff"
+                />
+                : <img src={image} alt={title} className="modal-image" />)
+            }
 
             <header className="card-header">
               <p style={{ fontWeight: "bold" }}>{title}</p>
