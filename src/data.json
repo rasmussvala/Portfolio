@@ -119,5 +119,13 @@
     "gif": "./assets/snake.gif",
     "description": "Created a minimal retro snake game in Unity. Try it on <a href='https://rasmussvala.itch.io/simple-snake' target='_blank'>itch.io/simple-snake</a>",
     "github": "https://github.com/rasmussvala/Simple-Snake-Game"
+  },
+  {
+    "date": "Septemper 2025",
+    "title": "Travel Cost Estimator",
+    "image": "./assets/travel.png",
+    "gif": "./assets/travel.gif",
+    "description": "Created a simple travel cost estimator using Mapbox and a gas price API. Try it on <a href='https://travel-cost-estimator.vercel.app/' target='_blank'>/travel-cost-estimator.vercel.app</a>",
+    "github": "https://github.com/rasmussvala/Travel-Cost-Estimator"
   }
 ]
