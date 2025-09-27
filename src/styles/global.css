@@ -2,6 +2,7 @@
 
 :root {
   --text-color: #121212;
+  --link-hover-color: #3f3f3f;
   --background-color: #fffbf4;
   --primary-color: #d73204;
   --header-color: #fa4411;
@@ -15,6 +16,7 @@
 @media (prefers-color-scheme: dark) {
   :root {
     --text-color: #fffbf4;
+    --link-hover-color: #dbdad9;
     --background-color: #121212;
     --primary-color: #6d77c5;
     --header-color: #4c59b8;
@@ -148,6 +150,10 @@ body {
   padding: 10px 20px;
   border-radius: 20px;
   align-items: center;
+}
+
+.social-links a:hover {
+  background: var(--link-hover-color);
 }
 
 /* For screens wider than 1000px (large desktop) */
