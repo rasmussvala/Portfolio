@@ -212,6 +212,7 @@ a:hover {
   .hero-tagline {
     text-align: left;
     padding: 0 var(--gutter-sm);
+    max-width: 900px;
   }
   .hero-eyebrow {
     justify-content: flex-start;
