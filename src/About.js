@@ -17,20 +17,12 @@ export default function About({ projectCount }) {
 
       <aside className="about__stats" aria-label="Stats">
         <div className="stat">
-          <span className="stat__value">{projectCount}</span>
-          <span className="stat__label">Projects shipped</span>
-        </div>
-        <div className="stat">
           <span className="stat__value">M.Sc.</span>
-          <span className="stat__label">Media Tech · LiU</span>
+          <span className="stat__label">Media Tech. · LiU</span>
         </div>
         <div className="stat">
           <span className="stat__value">5+</span>
           <span className="stat__label">Years coding</span>
-        </div>
-        <div className="stat">
-          <span className="stat__value">2×</span>
-          <span className="stat__label">Published npm packages</span>
         </div>
       </aside>
     </section>
