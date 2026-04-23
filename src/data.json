@@ -3,6 +3,8 @@
     "date": "October 2023",
     "title": "Global Illumination in C++",
     "image": "./assets/raytracing.png",
+    "category": "graphics",
+    "tech": ["C++", "Monte Carlo", "Ray Tracing"],
     "description": "Crafted a Monte Carlo ray tracer in C++ that simulates realistic global illumination featuring transparent, reflective, and Lambertian surfaces.",
     "github": "https://github.com/rasmussvala/TNGC15-Global-Illumination"
   },
@@ -11,14 +13,20 @@
     "title": "Procedural Planet in THREE.js",
     "image": "./assets/planet.png",
     "gif": "./assets/planet.gif",
-    "description": "Created a procedurally generated planet using noise to generate terrain, clouds, and stars in THREE.js. Try it here: <a href='https://proceduralplanet.vercel.app/' target='_blank'>procedural-planet.vercel.app</a>",
+    "category": "3d",
+    "tech": ["THREE.js", "GLSL", "Noise"],
+    "description": "Created a procedurally generated planet using noise to generate terrain, clouds, and stars in THREE.js.",
+    "liveUrl": "https://proceduralplanet.vercel.app/",
     "github": "https://github.com/rasmussvala/TNM084-Procedural-Planet"
   },
   {
     "date": "June 2023",
     "title": "Web App for Selecting Courses",
     "image": "./assets/kandidat.jpg",
-    "description": "Developed a web app for selecting master's courses as a Bachelor's thesis. Created with React.js and Google Firebase for user management and database. Explore: <a href='https://litheval.vercel.app/' target='_blank'>litheval.vercel.app</a>",
+    "category": "web",
+    "tech": ["React", "Firebase", "Node"],
+    "description": "Developed a web app for selecting master's courses as a Bachelor's thesis. Built with React and Google Firebase for user management and database.",
+    "liveUrl": "https://litheval.vercel.app/",
     "github": "https://github.com/jronnefalk/lithe-val"
   },
   {
@@ -26,20 +34,28 @@
     "title": "Animated Short in Blender",
     "image": "./assets/blender.jpg",
     "gif": "./assets/blender.gif",
-    "description": "Produced an animated short film from scratch in Blender, where responsibilities included animation, lighting, and props. Watch the short film: <a href='https://youtu.be/ffHXlyJ5MhI?si=IY26SvpH5QtPdGHY' target='_blank'>youtube.com/animated-short</a>"
+    "category": "3d",
+    "tech": ["Blender", "Animation", "Lighting"],
+    "description": "Produced an animated short film from scratch in Blender, where responsibilities included animation, lighting, and props.",
+    "liveUrl": "https://youtu.be/ffHXlyJ5MhI"
   },
   {
     "date": "October 2022",
     "title": "Singing Web Game in P5.js",
     "image": "./assets/ljudfysik.jpg",
     "gif": "./assets/ljudfysik.gif",
-    "description": "Developed a singing game using the JavaScript library p5.js, where you have to collect candies by using your voice. Primarily managed user inputs. Explore more: <a href='https://spookypannkaka.itch.io/sjungande-phadderister' target='_blank'>itch.io/sjungande-phadderister</a>",
+    "category": "game",
+    "tech": ["p5.js", "JavaScript", "Web Audio"],
+    "description": "Developed a singing game using p5.js, where you collect candies using your voice. Primarily managed user inputs and audio analysis.",
+    "liveUrl": "https://spookypannkaka.itch.io/sjungande-phadderister",
     "github": "https://github.com/spookypannkaka/Sjungande-Phadderister"
   },
   {
     "date": "December 2023",
     "title": "Chatbot using ML",
     "image": "./assets/chatbot.jpg",
+    "category": "ml",
+    "tech": ["Python", "TF-IDF", "NLP"],
     "description": "Implemented a Python chatbot using TF-IDF and cosine similarity. Processes conversational datasets, extracts features, and engages in text-based conversations.",
     "github": "https://github.com/rasmussvala/TNM108-Machine-Learning-for-Social-Media/tree/main/Project"
   },
@@ -47,6 +63,8 @@
     "date": "Mars 2023",
     "title": "Curling Simulation in UE5",
     "image": "./assets/curling.jpg",
+    "category": "3d",
+    "tech": ["Unreal Engine 5", "C++", "Physics"],
     "description": "Investigated the movement of curling stones, employing Euler Approximation to simulate friction and curling effect. Developed in Unreal Engine 5."
   },
   {
@@ -54,14 +72,20 @@
     "title": "The Blender Guru Donut",
     "image": "./assets/donut.jpg",
     "gif": "./assets/donut.gif",
-    "description": "Followed The Blender Guru Donut tutorial that covers basics like modeling, texturing, and rendering in Blender. Learned how to create a detailed donut scene. Watch the final render: <a href='https://youtube.com/shorts/pAsDB4-6lps?si=nf27NO9enEVcTEdK' target='_blank'>youtube.com/blender-render</a>"
+    "category": "3d",
+    "tech": ["Blender", "Modeling", "Texturing"],
+    "description": "Followed The Blender Guru Donut tutorial covering modeling, texturing, and rendering in Blender. Learned how to create a detailed donut scene.",
+    "liveUrl": "https://youtube.com/shorts/pAsDB4-6lps"
   },
   {
     "date": "June 2024",
     "title": "Online Multiplayer Mini Golf",
     "image": "./assets/webgolf.png",
     "gif": "./assets/webgolf.gif",
-    "description": "Created a web-based multiplayer golf game where players can compete against each other in real-time. The game is created with React and Google Firebase for authentication and data management. The golf game itself is built using Three.js. Check it out here: <a href='https://webgolf.vercel.app/' target='_blank'>webgolf.vercel.app</a>",
+    "category": "game",
+    "tech": ["React", "THREE.js", "Firebase"],
+    "description": "Created a web-based multiplayer golf game where players compete in real-time. Built with React and Google Firebase; the golf game itself uses Three.js.",
+    "liveUrl": "https://webgolf.vercel.app/",
     "github": "https://github.com/rasmussvala/Web-Golf"
   },
   {
@@ -69,7 +93,10 @@
     "title": "Cheddar Chase: A Godot Game",
     "image": "./assets/cheddar-chase.png",
     "gif": "./assets/cheddar-chase.gif",
-    "description": "Created a 2D, top-down pixel art platformer, built in Godot, where you play as a mouse collecting cheese while dodging enemies. Featuring custom Aseprite art, AI behavior, and original Beepbox sound and music. Cheddar Chase was honored as a <a href='https://liu.se/liugameawards' target='_blank'>LIU Game Award finalist</a>. Try it here: <a href='https://rasmussvala.itch.io/cheddar-chase' target='_blank'>itch.io/cheddar-chase</a>.",
+    "category": "game",
+    "tech": ["Godot", "GDScript", "Aseprite", "Beepbox"],
+    "description": "A 2D top-down pixel-art platformer built in Godot where you play as a mouse collecting cheese while dodging enemies. Custom Aseprite art, AI behavior, and original music. Honored as a LIU Game Award finalist.",
+    "liveUrl": "https://rasmussvala.itch.io/cheddar-chase",
     "github": "https://github.com/rasmussvala/Cheddar-Chase"
   },
   {
@@ -77,7 +104,10 @@
     "title": "React Native Password Validator",
     "image": "./assets/password-validator.png",
     "gif": "./assets/password-validator.gif",
-    "description": "A customizable React Native component for evaluating and displaying password strength. It provides password recommendations, dynamic status indicators, and support for password confirmation with visual feedback. Published on npm: <a href='https://www.npmjs.com/package/react-native-password-validator' target='_blank'>react-native-password-validator</a>",
+    "category": "package",
+    "tech": ["React Native", "TypeScript", "npm"],
+    "description": "A customizable React Native component for evaluating and displaying password strength. Provides password recommendations, dynamic status indicators, and confirmation support with visual feedback.",
+    "liveUrl": "https://www.npmjs.com/package/react-native-password-validator",
     "github": "https://github.com/rasmussvala/react-native-password-validator"
   },
   {
@@ -85,7 +115,10 @@
     "title": "React Native Bank Card Form",
     "image": "./assets/bank-card-form.jpeg",
     "gif": "./assets/bank-card-form.gif",
-    "description": "A React Native UI component designed to handle bank card input values. It includes multiple callback functions to manage changes within the component. Published on npm: <a href='https://www.npmjs.com/package/react-native-bank-card-form' target='_blank'>react-native-bank-card-form</a>",
+    "category": "package",
+    "tech": ["React Native", "TypeScript", "npm"],
+    "description": "A React Native UI component designed to handle bank card input values. Includes multiple callback functions to manage changes within the component.",
+    "liveUrl": "https://www.npmjs.com/package/react-native-bank-card-form",
     "github": "https://github.com/Grantallkotten/react-native-bank-card-form"
   },
   {
@@ -93,7 +126,10 @@
     "title": "Lightfall - Bigmode Game Jam",
     "image": "./assets/lightfall.png",
     "gif": "./assets/lightfall.png",
-    "description": "Created a A 2D platformer where you play as a light source and must collect batteries to stay alive for <a href='https://itch.io/jam/bigmode-game-jam-2025' target='_blank'>Bigmode Game Jam 2025</a>. Try it here: <a href='https://rasmussvala.itch.io/lightfall' target='_blank'>itch.io/lightfall</a>",
+    "category": "game",
+    "tech": ["Godot", "GDScript", "Game Jam"],
+    "description": "A 2D platformer where you play as a light source and must collect batteries to stay alive. Created for Bigmode Game Jam 2025.",
+    "liveUrl": "https://rasmussvala.itch.io/lightfall",
     "github": "https://github.com/rasmussvala/Bigmode-Game-Jam-2025"
   },
   {
@@ -101,6 +137,8 @@
     "title": "Particle System in C++",
     "image": "./assets/particle.png",
     "gif": "./assets/particle.gif",
+    "category": "graphics",
+    "tech": ["C++", "OpenGL", "GUI"],
     "description": "Created a minimal particle system with a small graphical interface that allows for visual editing of parameters.",
     "github": "https://github.com/rasmussvala/TNM094-Particle-System"
   },
@@ -109,7 +147,10 @@
     "title": "Simple Pong in Unity",
     "image": "./assets/pong.png",
     "gif": "./assets/pong.gif",
-    "description": "Created a minimal Pong game in Unity, featuring smooth paddle controls, basic AI, and score tracking. Try it on <a href='https://rasmussvala.itch.io/simple-pong' target='_blank'>itch.io/simple-pong</a>",
+    "category": "game",
+    "tech": ["Unity", "C#"],
+    "description": "A minimal Pong game in Unity featuring smooth paddle controls, basic AI, and score tracking.",
+    "liveUrl": "https://rasmussvala.itch.io/simple-pong",
     "github": "https://github.com/rasmussvala/Simple-Pong-Game"
   },
   {
@@ -117,7 +158,10 @@
     "title": "Simple Snake in Unity",
     "image": "./assets/snake.png",
     "gif": "./assets/snake.gif",
-    "description": "Created a minimal retro snake game in Unity. Try it on <a href='https://rasmussvala.itch.io/simple-snake' target='_blank'>itch.io/simple-snake</a>",
+    "category": "game",
+    "tech": ["Unity", "C#"],
+    "description": "A minimal retro snake game in Unity.",
+    "liveUrl": "https://rasmussvala.itch.io/simple-snake",
     "github": "https://github.com/rasmussvala/Simple-Snake-Game"
   },
   {
@@ -125,7 +169,10 @@
     "title": "Travel Cost Estimator",
     "image": "./assets/travel.png",
     "gif": "./assets/travel.gif",
-    "description": "Created a simple travel cost estimator using Mapbox and a gas price API. Try it on <a href='https://travel-cost-estimator.vercel.app/' target='_blank'>/travel-cost-estimator.vercel.app</a>",
+    "category": "web",
+    "tech": ["React", "Mapbox", "REST API"],
+    "description": "A travel cost estimator using Mapbox and a gas price API.",
+    "liveUrl": "https://travel-cost-estimator.vercel.app/",
     "github": "https://github.com/rasmussvala/Travel-Cost-Estimator"
   }
 ]

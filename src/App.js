@@ -1,12 +1,15 @@
 import "./styles/global.css";
 import projects from "./data.json";
-import Card from "./Card.js";
-import Header from "./Header.js";
+import { useMemo, useState, useEffect } from "react";
+import { AnimatePresence } from "motion/react";
+
+import Card from "./Card";
+import Header from "./Header";
 import Links from "./Links";
+import About from "./About";
+import Filter, { CATEGORIES } from "./Filter";
+import Footer from "./Footer";
 
-import { useState, useEffect } from "react";
-
-// Convert date strings to a comparable format
 const parseDate = (dateString) => {
   const [month, year] = dateString.split(" ");
   return new Date(`${month} 1, ${year}`);
@@ -14,16 +17,31 @@ const parseDate = (dateString) => {
 
 function App() {
   const [isLoaded, setIsLoaded] = useState(false);
+  const [active, setActive] = useState("all");
 
-  // Sort the projects by date
-  const sortedProjects = projects
-    .slice()
-    .sort((a, b) => parseDate(b.date) - parseDate(a.date));
-
-  // Set loaded to true to trigger the CSS animation
   useEffect(() => {
     setIsLoaded(true);
   }, []);
+
+  const sortedProjects = useMemo(
+    () =>
+      projects.slice().sort((a, b) => parseDate(b.date) - parseDate(a.date)),
+    []
+  );
+
+  const counts = useMemo(() => {
+    const c = { all: sortedProjects.length };
+    for (const cat of CATEGORIES) if (cat.id !== "all") c[cat.id] = 0;
+    for (const p of sortedProjects) {
+      if (p.category && c[p.category] !== undefined) c[p.category] += 1;
+    }
+    return c;
+  }, [sortedProjects]);
+
+  const visible =
+    active === "all"
+      ? sortedProjects
+      : sortedProjects.filter((p) => p.category === active);
 
   return (
     <div className={`app ${isLoaded ? "loaded" : ""}`}>
@@ -31,34 +49,45 @@ function App() {
       <Links />
 
       <div className="content-container">
-        <h2>About me</h2>
-        <div className="about-me-text">
-          <p>
-            I grew up in Tranås, Sweden, and now live in Linköping. I'm passionate about coding and enjoy exploring new technologies. I've worked with C++, Python, web and game development, and Git. When I'm not coding, I like playing video games, staying active, and working out. Feel free to reach out through my socials — I'm always open to a chat.
-          </p>
+        <div className="section-divider" aria-hidden="true">
+          <span>*</span>
+          <span>*</span>
+          <span>*</span>
         </div>
 
-        <h2>Projects</h2>
-        <section className="card-container">
-          {sortedProjects.map((project, index) => (
-            <Card
-              key={index}
-              date={project.date}
-              title={project.title}
-              imagePath={project.image}
-              gifPath={project.gif ? project.gif : null}
-              description={project.description}
-              github={project.github}
-            />
-          ))}
+        <About projectCount={sortedProjects.length} />
+
+        <div className="projects-header">
+          <h2>Projects</h2>
+          <span className="projects-header__count">
+            Showing <strong>{visible.length}</strong> / {sortedProjects.length}
+          </span>
+        </div>
+
+        <Filter active={active} counts={counts} onChange={setActive} />
+
+        <section className="card-container" aria-label="Projects">
+          <AnimatePresence mode="popLayout">
+            {visible.map((project, i) => (
+              <Card
+                key={project.title}
+                index={sortedProjects.indexOf(project)}
+                date={project.date}
+                title={project.title}
+                imagePath={project.image}
+                gifPath={project.gif ? project.gif : null}
+                description={project.description}
+                category={project.category}
+                tech={project.tech}
+                github={project.github}
+                liveUrl={project.liveUrl}
+              />
+            ))}
+          </AnimatePresence>
         </section>
       </div>
-      <footer>
-        <p>
-          2025 Designed and created by me. Find the source code on{" "}
-          <a href="https://github.com/rasmussvala/Portfolio">GitHub</a>.
-        </p>
-      </footer>
+
+      <Footer />
     </div>
   );
 }
