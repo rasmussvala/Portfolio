@@ -1,6 +1,5 @@
 import Links from "./Links";
 import P5Wrapper from "./p5Wrapper";
-// import Marquee from "./Marquee";
 
 export default function Header() {
   return (
@@ -20,13 +19,6 @@ export default function Header() {
       </p>
 
       <Links />
-
-      {/* <Marquee /> */}
-
-      {/* <div className="scroll-cue" aria-hidden="true">
-        <span className="blink">*</span>
-        <span>Scroll ↓</span>
-      </div> */}
     </header>
   );
 }

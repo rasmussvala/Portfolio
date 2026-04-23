@@ -1,11 +1,8 @@
-import p5 from "p5";
-
 const BREAKPOINT = 900;
 const isSmall = () => window.innerWidth < BREAKPOINT;
 
 export default function sketch(p) {
   let letters = [];
-  let lettersOriginalPositions = [];
   let asterisks = [];
   let customFont;
   let textSize = 120;
@@ -61,10 +58,8 @@ export default function sketch(p) {
     }
   }
 
-  // Function to create and position letters and asterisks
   function createLettersAndAsterisks(message) {
     letters = [];
-    lettersOriginalPositions = [];
     asterisks = [];
 
     let totalWidth = 0;
@@ -77,13 +72,11 @@ export default function sketch(p) {
     let offsetX2;
     let offsetY;
     if (isSmall()) {
-      // Align to left when window width is less than BREAKPOINT
       startX = 16;
       offsetX1 = 40;
       offsetX2 = 15;
       offsetY = 40;
     } else {
-      // Center alignment for larger windows
       startX = (p.width - totalWidth) / 2;
       offsetX1 = 30;
       offsetX2 = 30;
@@ -98,7 +91,6 @@ export default function sketch(p) {
       let w = p.textWidth(letter);
 
       letters.push(new MovableLetter(letter, x, p.height / 2));
-      lettersOriginalPositions.push(p.createVector(x, p.height / 2));
 
       x += w;
     }
@@ -107,19 +99,17 @@ export default function sketch(p) {
     asterisks.push(new SpinningAsterisk(endX + offsetX2, 100 + offsetY));
   }
 
-  // Shared update logic for mouse repulsion and return-to-origin
-  function updatePositionWithMouseRepulsion(position, getOriginalPosition) {
-    let mousePosition = p.createVector(p.mouseX, p.mouseY);
-    let direction = p5.Vector.sub(position, mousePosition);
-    let distance = direction.mag();
+  function updatePositionWithMouseRepulsion(position, originalPosition) {
+    const dx = position.x - p.mouseX;
+    const dy = position.y - p.mouseY;
+    const distance = Math.sqrt(dx * dx + dy * dy);
 
     if (distance < 100) {
-      direction.normalize();
-      let force = p.map(distance, 0, 100, 10, 0);
-      direction.mult(force);
-      position.add(direction);
+      const force = p.map(distance, 0, 100, 10, 0);
+      const scale = distance > 0 ? force / distance : 0;
+      position.x += dx * scale;
+      position.y += dy * scale;
     } else {
-      const originalPosition = getOriginalPosition();
       position.x = p.lerp(position.x, originalPosition.x, 0.1);
       position.y = p.lerp(position.y, originalPosition.y, 0.1);
     }
@@ -134,10 +124,7 @@ export default function sketch(p) {
 
     update() {
       this.angle += 0.02;
-      updatePositionWithMouseRepulsion(
-        this.position,
-        () => this.originalPosition
-      );
+      updatePositionWithMouseRepulsion(this.position, this.originalPosition);
     }
 
     display() {
@@ -156,13 +143,11 @@ export default function sketch(p) {
     constructor(letter, x, y) {
       this.letter = letter;
       this.position = p.createVector(x, y);
+      this.originalPosition = p.createVector(x, y);
     }
 
     update() {
-      updatePositionWithMouseRepulsion(
-        this.position,
-        () => lettersOriginalPositions[letters.indexOf(this)]
-      );
+      updatePositionWithMouseRepulsion(this.position, this.originalPosition);
     }
 
     display() {
