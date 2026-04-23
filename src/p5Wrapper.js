@@ -2,31 +2,39 @@ import { useRef, useEffect, useState } from "react";
 import p5 from "p5";
 import sketch from "./p5Sketch";
 
+const SMALL_MQ = "(max-width: 899px)";
+
 const P5Wrapper = () => {
   const canvasRef = useRef(null);
-  const [theme, setTheme] = useState("light"); // or "dark"
+  const [theme, setTheme] = useState("light");
+  const [isSmall, setIsSmall] = useState(
+    () =>
+      typeof window !== "undefined" && window.matchMedia(SMALL_MQ).matches
+  );
 
-  // Remove and redo canvas to apply theme changes
+  // Recreate p5 instance on theme OR breakpoint change
   useEffect(() => {
-    let canvas = new p5(sketch, canvasRef.current);
-    // Cleanup function to remove canvas when effect runs again
-    return () => { canvas.remove(); };
-  }, [theme]);
+    const canvas = new p5(sketch, canvasRef.current);
+    return () => {
+      canvas.remove();
+    };
+  }, [theme, isSmall]);
 
+  // Watch prefers-color-scheme
   useEffect(() => {
     const mediaQuery = window.matchMedia("(prefers-color-scheme: dark)");
     setTheme(mediaQuery.matches ? "dark" : "light");
-
-    const handleThemeChange = (e) => {
-      setTheme(e.matches ? "dark" : "light");
-    };
-
+    const handleThemeChange = (e) => setTheme(e.matches ? "dark" : "light");
     mediaQuery.addEventListener("change", handleThemeChange);
+    return () => mediaQuery.removeEventListener("change", handleThemeChange);
+  }, []);
 
-    // Cleanup function to remove event listener
-    return () => {
-      mediaQuery.removeEventListener("change", handleThemeChange);
-    };
+  // Watch 900px breakpoint
+  useEffect(() => {
+    const mq = window.matchMedia(SMALL_MQ);
+    const handler = (e) => setIsSmall(e.matches);
+    mq.addEventListener("change", handler);
+    return () => mq.removeEventListener("change", handler);
   }, []);
 
   return <div ref={canvasRef} className="p5-canvas" />;
