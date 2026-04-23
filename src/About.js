@@ -1,7 +1,6 @@
 export default function About({ projectCount }) {
   return (
-    <section className="about content-container">
-      <span className="about__gutter-label">ABOUT · N°01</span>
+    <section className="about">
       <div className="about__heading">
         <h2>About me</h2>
         <span className="mono">RASMUS SVALA · LINKÖPING, SE</span>
