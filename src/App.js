@@ -4,7 +4,6 @@ import { useMemo, useState, useEffect } from "react";
 
 import Card from "./Card";
 import Header from "./Header";
-import Links from "./Links";
 import About from "./About";
 import Filter, { CATEGORIES } from "./Filter";
 import Footer from "./Footer";
@@ -45,7 +44,6 @@ function App() {
   return (
     <div className={`app ${isLoaded ? "loaded" : ""}`}>
       <Header />
-      <Links />
 
       <div className="content-container">
         <div className="section-divider" aria-hidden="true">
