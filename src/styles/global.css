@@ -373,8 +373,7 @@ a:hover {
   position: relative;
   display: grid;
   grid-template-columns: 1.6fr 1fr;
-  gap: 3rem;
-  padding-top: 2rem;
+  gap: 3rem 4rem;
 }
 
 .about__gutter-label {
@@ -395,28 +394,29 @@ a:hover {
   display: flex;
   align-items: baseline;
   justify-content: space-between;
-  gap: 1rem;
-  margin-bottom: 1rem;
+  flex-wrap: wrap;
+  gap: 0.6rem 2rem;
 }
 
 .about__heading h2 {
   font-size: clamp(2.5rem, 7vw, 5rem);
+  white-space: nowrap;
 }
 
 .about__body {
   font-family: var(--font-body);
-  font-size: 1.2rem;
-  line-height: 1.55;
+  font-size: 1.25rem;
+  line-height: 1.6;
   color: var(--ink-soft);
 }
 
 .about__body::first-letter {
   font-family: var(--font-display);
-  font-size: 5.5rem;
+  font-size: 4.5rem;
   color: var(--primary-color);
   float: left;
-  line-height: 0.85;
-  padding: 6px 14px 0 0;
+  line-height: 0.82;
+  padding: 10px 16px 0 0;
 }
 
 .about__stats {
@@ -467,10 +467,14 @@ a:hover {
     gap: 1.6rem 2.4rem;
   }
   .about__body {
-    font-size: 1.05rem;
+    font-size: 1.1rem;
   }
   .about__body::first-letter {
-    font-size: 4rem;
+    font-size: 3.6rem;
+    padding: 6px 12px 0 0;
+  }
+  .about__heading h2 {
+    white-space: normal;
   }
 }
 
