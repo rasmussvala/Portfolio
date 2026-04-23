@@ -152,13 +152,13 @@ a:hover {
   max-width: var(--maxw);
   margin: 0 auto;
   padding: 0 var(--gutter-lg);
-  padding-bottom: var(--gutter-lg);
+  padding-bottom: 5rem;
 }
 
 @media (max-width: 900px) {
   .content-container {
     padding: 0 var(--gutter-sm);
-    padding-bottom: var(--gutter-sm);
+    padding-bottom: 5rem;
   }
 }
 
@@ -864,7 +864,7 @@ footer {
   letter-spacing: -0.02em;
   color: var(--text-color);
   margin-bottom: 2rem;
-  padding-top: 2rem;
+  padding-top: 5rem;
 }
 
 .footer__cta .ast {
