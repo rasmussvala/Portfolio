@@ -164,7 +164,7 @@ a:hover {
 
 /* ---------- Hero ---------- */
 .header {
-  padding-top: clamp(3rem, 12vw, 9rem);
+  padding-top: 16rem;
   position: relative;
   z-index: 2;
 }
