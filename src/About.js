@@ -7,11 +7,9 @@ export default function About({ projectCount }) {
       </div>
 
       <p className="about__body">
-        I grew up in Tranås, Sweden, and now live in Linköping. I'm passionate
-        about coding and enjoy exploring new technologies. I've worked with C++,
-        Python, web and game development, and Git. When I'm not coding, I like
-        playing video games, staying active, and working out. Feel free to reach
-        out through my socials — I'm always open to a chat.
+        I grew up in Tranås, Sweden, and now live in Linköping. I have a Master's degree in Media Technology 
+        and Engineering from Linköping University. I write software for medical imaging at
+        Sectra by day, and mess with games, web, and other small experiments by night.
       </p>
 
       <aside className="about__stats" aria-label="Stats">
