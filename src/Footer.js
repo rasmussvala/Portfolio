@@ -30,8 +30,7 @@ export default function Footer() {
       </div>
 
       <div className="footer__bottom">
-        <span>© 2026 Rasmus Svala</span>
-        <span>Version 2.0 — Updated Apr 2026</span>
+        <span>2026 Rasmus Svala</span>
         <span>
           <a
             href="https://github.com/rasmussvala/Portfolio"
