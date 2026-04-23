@@ -1,5 +1,6 @@
+import Links from "./Links";
 import P5Wrapper from "./p5Wrapper";
-import Marquee from "./Marquee";
+// import Marquee from "./Marquee";
 
 export default function Header() {
   return (
@@ -18,12 +19,14 @@ export default function Header() {
         Hi, I’m Rasmus — a software engineer with an M.Sc. in Media Technology & Engineering, currently working with medical imaging at Sectra in Linköping, Sweden.
       </p>
 
-      <Marquee />
+      <Links />
 
-      <div className="scroll-cue" aria-hidden="true">
+      {/* <Marquee /> */}
+
+      {/* <div className="scroll-cue" aria-hidden="true">
         <span className="blink">*</span>
         <span>Scroll ↓</span>
-      </div>
+      </div> */}
     </header>
   );
 }
