@@ -76,12 +76,7 @@ function Card({
 
   return (
     <>
-      <motion.article
-        layout
-        initial={{ opacity: 0, y: 24 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: true, margin: "-60px" }}
-        transition={{ duration: 0.55, ease: [0.22, 1, 0.36, 1] }}
+      <article
         className="card"
         onClick={() => setIsModalOpen(true)}
         ref={tilt.ref}
@@ -113,7 +108,7 @@ function Card({
             <span className="chip chip--more">+{extraTech}</span>
           )}
         </div>
-      </motion.article>
+      </article>
 
       <AnimatePresence>
         {isModalOpen && (
