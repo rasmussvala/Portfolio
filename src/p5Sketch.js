@@ -1,5 +1,8 @@
 import p5 from "p5";
 
+const BREAKPOINT = 900;
+const isSmall = () => window.innerWidth < BREAKPOINT;
+
 export default function sketch(p) {
   let letters = [];
   let lettersOriginalPositions = [];
@@ -23,15 +26,10 @@ export default function sketch(p) {
   };
 
   p.setup = () => {
-    p.createCanvas(p.windowWidth, canvasHeight);
-
-    // Initial text size setting
+    p.createCanvas(window.innerWidth, canvasHeight);
     adjustTextSize();
-
     p.textFont(customFont);
-
-    let message = "Rasmus Svala";
-    createLettersAndAsterisks(message);
+    createLettersAndAsterisks("Rasmus Svala");
   };
 
   p.draw = () => {
@@ -49,22 +47,16 @@ export default function sketch(p) {
   };
 
   p.windowResized = () => {
-    // Ensure that the canvas and textSize are available before proceeding
     if (p && p.canvas && typeof p.textSize === "function") {
-      p.resizeCanvas(p.windowWidth, canvasHeight);
+      p.resizeCanvas(window.innerWidth, canvasHeight);
       adjustTextSize();
       createLettersAndAsterisks("Rasmus Svala");
     }
   };
 
   function adjustTextSize() {
-    // Check if p.textSize is defined before using it
     if (p && typeof p.textSize === "function") {
-      if (p.windowWidth < 900) {
-        textSize = 60;
-      } else {
-        textSize = 120;
-      }
+      textSize = isSmall() ? 60 : 120;
       p.textSize(textSize);
     }
   }
@@ -84,8 +76,8 @@ export default function sketch(p) {
     let offsetX1;
     let offsetX2;
     let offsetY;
-    if (p.windowWidth < 900) {
-      // Align to left when window width is less than 900
+    if (isSmall()) {
+      // Align to left when window width is less than BREAKPOINT
       startX = 16;
       offsetX1 = 40;
       offsetX2 = 15;
