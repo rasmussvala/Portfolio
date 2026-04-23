@@ -7,11 +7,7 @@ export default function Header() {
       <div className="hero-eyebrow">
         <span>Portfolio</span>
         <span className="dot" aria-hidden="true"></span>
-        <span>N°002</span>
-        <span className="dot" aria-hidden="true"></span>
         <span>Linköping, SE</span>
-        <span className="dot" aria-hidden="true"></span>
-        <span>Est. 2020</span>
       </div>
 
       <div className="text-container">
