@@ -12,7 +12,6 @@ const P5Wrapper = () => {
       typeof window !== "undefined" && window.matchMedia(SMALL_MQ).matches
   );
 
-  // Recreate p5 instance on theme OR breakpoint change
   useEffect(() => {
     const canvas = new p5(sketch, canvasRef.current);
     return () => {
@@ -20,7 +19,6 @@ const P5Wrapper = () => {
     };
   }, [theme, isSmall]);
 
-  // Watch prefers-color-scheme
   useEffect(() => {
     const mediaQuery = window.matchMedia("(prefers-color-scheme: dark)");
     setTheme(mediaQuery.matches ? "dark" : "light");
@@ -29,7 +27,6 @@ const P5Wrapper = () => {
     return () => mediaQuery.removeEventListener("change", handleThemeChange);
   }, []);
 
-  // Watch 900px breakpoint
   useEffect(() => {
     const mq = window.matchMedia(SMALL_MQ);
     const handler = (e) => setIsSmall(e.matches);

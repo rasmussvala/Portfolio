@@ -142,7 +142,7 @@ function Card({
               </button>
 
               <div className="modal__hero">
-                <img src={gifPath ? gif || image : image} alt={title} />
+                <img src={gif || image} alt={title} />
               </div>
 
               <div className="modal__body">

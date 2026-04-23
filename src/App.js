@@ -52,7 +52,7 @@ function App() {
           <span>*</span>
         </div>
 
-        <About projectCount={sortedProjects.length} />
+        <About />
 
         <div className="projects-header">
           <h2>Projects</h2>
@@ -64,14 +64,14 @@ function App() {
         <Filter active={active} counts={counts} onChange={setActive} />
 
         <section className="card-container" aria-label="Projects">
-          {visible.map((project) => (
+          {visible.map((project, i) => (
             <Card
               key={project.title}
-              index={sortedProjects.indexOf(project)}
+              index={i}
               date={project.date}
               title={project.title}
               imagePath={project.image}
-              gifPath={project.gif ? project.gif : null}
+              gifPath={project.gif}
               description={project.description}
               category={project.category}
               tech={project.tech}

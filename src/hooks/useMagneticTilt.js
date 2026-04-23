@@ -1,8 +1,10 @@
-import { useRef, useCallback } from "react";
+import { useRef, useCallback, useEffect } from "react";
 
 export default function useMagneticTilt(max = 4) {
   const ref = useRef(null);
   const raf = useRef(0);
+
+  useEffect(() => () => cancelAnimationFrame(raf.current), []);
 
   const onMove = useCallback(
     (e) => {

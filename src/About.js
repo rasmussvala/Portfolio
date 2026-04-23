@@ -1,4 +1,4 @@
-export default function About({ projectCount }) {
+export default function About() {
   return (
     <section className="about">
       <div className="about__heading">
