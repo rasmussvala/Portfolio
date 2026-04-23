@@ -15,9 +15,7 @@ export default function Header() {
       </div>
 
       <p className="hero-tagline">
-        Hi, I'm Rasmus — a software engineer with an M.Sc. in Media Technology
-        &amp; Engineering, based in Linköping, Sweden. I build games, graphics,
-        and the occasional web thing.
+        Hi, I’m Rasmus — a software engineer with an M.Sc. in Media Technology & Engineering, currently working with medical imaging at Sectra in Linköping, Sweden.
       </p>
 
       <Marquee />
