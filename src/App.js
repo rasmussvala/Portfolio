@@ -1,7 +1,6 @@
 import "./styles/global.css";
 import projects from "./data.json";
 import { useMemo, useState, useEffect } from "react";
-import { AnimatePresence } from "motion/react";
 
 import Card from "./Card";
 import Header from "./Header";
@@ -67,23 +66,21 @@ function App() {
         <Filter active={active} counts={counts} onChange={setActive} />
 
         <section className="card-container" aria-label="Projects">
-          <AnimatePresence mode="popLayout">
-            {visible.map((project, i) => (
-              <Card
-                key={project.title}
-                index={sortedProjects.indexOf(project)}
-                date={project.date}
-                title={project.title}
-                imagePath={project.image}
-                gifPath={project.gif ? project.gif : null}
-                description={project.description}
-                category={project.category}
-                tech={project.tech}
-                github={project.github}
-                liveUrl={project.liveUrl}
-              />
-            ))}
-          </AnimatePresence>
+          {visible.map((project) => (
+            <Card
+              key={project.title}
+              index={sortedProjects.indexOf(project)}
+              date={project.date}
+              title={project.title}
+              imagePath={project.image}
+              gifPath={project.gif ? project.gif : null}
+              description={project.description}
+              category={project.category}
+              tech={project.tech}
+              github={project.github}
+              liveUrl={project.liveUrl}
+            />
+          ))}
         </section>
       </div>
 
